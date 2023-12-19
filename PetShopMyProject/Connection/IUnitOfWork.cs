@@ -1,4 +1,4 @@
-﻿namespace PetShopMyProject.Data.Connection
+﻿namespace PetShopMyProject.Connection
 {
     public interface IUnitOfWork
     {

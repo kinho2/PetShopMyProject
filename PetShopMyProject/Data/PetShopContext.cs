@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using PetShopMyProject.Data.Connection;
+using PetShopMyProject.Connection;
 using PetShopMyProject.Models;
 using System;
 
