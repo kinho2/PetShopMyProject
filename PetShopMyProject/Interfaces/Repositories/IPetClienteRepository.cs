@@ -7,7 +7,7 @@ namespace PetShopMyProject.Interfaces.Repositories
     public interface IPetClienteRepository
     {
         List<PetCliente> GetPetClientes();
-        PetCliente GetPetCliente(int id);
+        PetCliente GetPetClienteBy(int id);
         void AddPetCliente(PetCliente petCliente);
         void RemoveCliente(PetCliente petCliente);
         IUnitOfWork UnitOfWork();
