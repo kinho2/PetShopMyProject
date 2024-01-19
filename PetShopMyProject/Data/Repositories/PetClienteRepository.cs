@@ -27,12 +27,12 @@ namespace PetShopMyProject.Data.Repositories
 
         public PetCliente GetPetClienteBy(int id)
         {
-            return _db.PetClientes.Find(id);
+            return _db.PetCliente.Find(id);
         }
 
         public List<PetCliente> GetPetClientes()
         {
-            return _db.PetClientes.ToList();
+            return _db.PetCliente.ToList();
         }
 
         public void RemoveCliente(PetCliente petCliente)

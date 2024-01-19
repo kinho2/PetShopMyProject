@@ -16,14 +16,14 @@ namespace PetShopMyProject.Controllers
 
         public ActionResult Index()
         {
-            return View(_db.PetClientes.ToList());
+            return View(_db.PetCliente.ToList());
         }
 
         // GET: ClientesController/Details/5
         public ActionResult Details(int id)
         {
 
-            var petClientes = _db.PetClientes.Find(id);
+            var petClientes = _db.PetCliente.Find(id);
             return View(petClientes);
         }
 
@@ -40,7 +40,7 @@ namespace PetShopMyProject.Controllers
         {
             try
             {
-                _db.PetClientes.Add(petClientes);
+                _db.PetCliente.Add(petClientes);
                 _db.SaveChanges();
                 return RedirectToAction(nameof(Index));
             }
@@ -53,7 +53,7 @@ namespace PetShopMyProject.Controllers
         // GET: ClientesController/Edit/5
         public ActionResult Edit(int id)
         {
-            var petClientes = _db.PetClientes.Find(id);
+            var petClientes = _db.PetCliente.Find(id);
 
             return View(petClientes);
         }
@@ -65,7 +65,7 @@ namespace PetShopMyProject.Controllers
         {
             try
             {
-                var petClientesExiste = _db.PetClientes.Find(id);
+                var petClientesExiste = _db.PetCliente.Find(id);
                 petClientesExiste.PetName = petClientes.PetName;
                 petClientesExiste.TypePet = petClientes.TypePet;
 
@@ -92,7 +92,7 @@ namespace PetShopMyProject.Controllers
         {
             try
             {
-                var petClientesExiste = _db.PetClientes.Find(id);
+                var petClientesExiste = _db.PetCliente.Find(id);
                 _db.Remove(petClientesExiste);
                 _db.SaveChanges();
                 return RedirectToAction(nameof(Index));

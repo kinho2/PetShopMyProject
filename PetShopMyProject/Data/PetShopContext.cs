@@ -9,11 +9,11 @@ namespace PetShopMyProject.Data
     {
         public PetShopContext(DbContextOptions options) : base(options)
         {
-            //Database.SetCommandTimeout((int)TimeSpan.FromMinutes(5).TotalSeconds);
+            Database.SetCommandTimeout((int)TimeSpan.FromMinutes(5).TotalSeconds);
 
         }
-        public DbSet<Cliente> Clientes { get; set; }
-        public DbSet<PetCliente> PetClientes { get; set; }
+        public DbSet<Cliente> Cliente { get; set; }
+        public DbSet<PetCliente> PetCliente { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

@@ -6,25 +6,25 @@ using System.Linq;
 
 namespace PetShopMyProject.Controllers
 {
-    public class ClientesController : Controller
+    public class ClienteController : Controller
     {
         // GET: ClientesController
         private readonly PetShopContext _db;
-        public ClientesController(PetShopContext db)
+        public ClienteController(PetShopContext db)
         {
             _db = db;
         }
 
         public ActionResult Index()
         {
-            return View(_db.Clientes.ToList());
+            return View(_db.Cliente.ToList());
         }
 
         // GET: ClientesController/Details/5
         public ActionResult Details(int id)
         {
 
-            var cliente = _db.Clientes.Find(id);
+            var cliente = _db.Cliente.Find(id);
             return View(cliente);
         }
 
@@ -41,7 +41,7 @@ namespace PetShopMyProject.Controllers
         {
             try
             {
-                _db.Clientes.Add(cliente);
+                _db.Cliente.Add(cliente);
                 _db.SaveChanges();
                 return RedirectToAction(nameof(Index));
             }
@@ -54,7 +54,7 @@ namespace PetShopMyProject.Controllers
         // GET: ClientesController/Edit/5
         public ActionResult Edit(int id)
         {
-            var cliente = _db.Clientes.Find(id);
+            var cliente = _db.Cliente.Find(id);
 
             return View(cliente);
         }
@@ -66,7 +66,7 @@ namespace PetShopMyProject.Controllers
         {
             try
             {
-                var clienteExiste = _db.Clientes.Find(id);
+                var clienteExiste = _db.Cliente.Find(id);
                 clienteExiste.ClienteName = cliente.ClienteName;
                 clienteExiste.ClienteEmail = cliente.ClienteEmail;
                 clienteExiste.NumberPhone = cliente.NumberPhone;
@@ -94,7 +94,7 @@ namespace PetShopMyProject.Controllers
         {
             try
             {
-                var clienteExiste = _db.Clientes.Find(id);
+                var clienteExiste = _db.Cliente.Find(id);
                 _db.Remove(clienteExiste);
                 _db.SaveChanges();
                 return RedirectToAction(nameof(Index));
